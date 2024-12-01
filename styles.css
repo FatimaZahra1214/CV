@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 3rem;
+    background: linear-gradient(-45deg, #ffffff, #f0f2f5, #e8eef7, #ffffff);
+    background-size: 400% 400%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: gradient 15s ease infinite, fadeIn 1s ease-in;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #f6f8fb 0%, #e9f0f8 100%);
+    animation: fadeIn 1s ease-in;
+}
+
+.profile-pic img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3498db;
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile-pic img:hover {
+    transform: scale(1.05);
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.header-content h2 {
+    color: #3498db;
+    font-size: 1.5rem;
+}
+
+/* Contact Information Styles */
+.contact-info {
+    margin-bottom: 2rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #f1f4f7 100%);
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    justify-content: flex-start;
+    text-align: left;
+    overflow: hidden;
+}
+
+.info-item:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.info-item i {
+    font-size: 1.2rem;
+    color: #3498db;
+    animation: rotate 5s linear infinite;
+    animation-play-state: paused;
+    min-width: 20px;
+    text-align: center;
+}
+
+.info-item:hover i {
+    animation-play-state: running;
+}
+
+.info-item p {
+    margin: 0;
+    flex: 1;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Experience Styles */
+.timeline {
+    position: relative;
+    margin-top: 1rem;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #f1f4f7 100%);
+    border-left: 4px solid #3498db;
+    border-radius: 0 5px 5px 0;
+    animation: slideIn 0.5s ease-out;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+}
+
+.timeline-item:hover {
+    transform: translateX(10px) scale(1.01);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(52, 152, 219, 0.2) 0%, rgba(52, 152, 219, 0) 70%);
+    transition: width 0.5s ease, height 0.5s ease;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.timeline-item:hover::after {
+    width: 200px;
+    height: 200px;
+}
+
+.timeline-item h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+/* Skills Styles */
+.skills-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 12px;
+    background: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.skill-level {
+    height: 100%;
+    background: linear-gradient(90deg, #3498db, #2ecc71, #3498db);
+    border-radius: 5px;
+    background-size: 200px 100%;
+    animation: shine 3s linear infinite, fillBar 1.5s ease-out;
+}
+
+/* Education Styles */
+.education-item {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #f1f4f7 100%);
+    border-radius: 5px;
+    animation: slideIn 0.5s ease-out;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.education-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes borderPulse {
+    0% {
+        border-color: #3498db;
+    }
+    50% {
+        border-color: #2ecc71;
+    }
+    100% {
+        border-color: #3498db;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes shine {
+    0% { background-position: -100px; }
+    100% { background-position: 200px; }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f0f2f5;
+}
+
+.company, .school {
+    color: #3498db;
+    font-weight: bold;
+}
+
+.date {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -10px;
+    right: -10px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.section-title:hover::before {
+    opacity: 0.1;
+}
+
+.achievements {
+    color: #666;
+    line-height: 1.8;
+    text-align: left;
+    padding-left: 20px;
+}
+
+/* Add this style for the education section */
+.education {
+    margin-top: 3rem;  /* Adds space above the education section */
+}
+
+/* For consistent heading alignment */
+h3.section-title {
+    text-align: left;
+    width: 100%;
+}
+
+/* For consistent list alignment */
+ul.achievements {
+    text-align: left;
+    padding-left: 20px;
+}
+
+/* For consistent paragraph alignment */
+p {
+    text-align: left;
+}
+
+/* Add these new keyframe animations */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes slideInFromRight {
+    0% { transform: translateX(100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Update existing elements with new animations */
+.skill-item {
+    animation: slideInFromRight 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.skill-item:nth-child(1) { animation-delay: 0.1s; }
+.skill-item:nth-child(2) { animation-delay: 0.2s; }
+.skill-item:nth-child(3) { animation-delay: 0.3s; }
+.skill-item:nth-child(4) { animation-delay: 0.4s; }
+.skill-item:nth-child(5) { animation-delay: 0.5s; }
+ 
